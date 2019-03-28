@@ -20,6 +20,7 @@ class AutoUpdateModules(http.Controller):
                     # if module_auto_update is installed on the current db, update modules
                     Module = env['ir.module.module']
                     if Module.search(domain):
+                        print(db)
                         Module.upgrade_changed_checksum()
 
             except Exception:
